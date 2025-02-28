@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>для тебя <3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            padding: 50px;
+        }
+        .heart {
+            font-size: 50px;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: inline-block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cat-image {
+            max-width: 200px; 
+            margin: 20px auto; 
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="heart">❤️</div>
+        <h2 id="message">ты самый лучший! </h2>
+        <button onclick="showLove()">ещё признание</button>
+    </div>
+
+    <script>
+        const messages = [
+            "ты случайно не чебупицца , тогда почему мне хочется тя съесть? ",
+            "ты мне нрав ну типо ээээ:) ",
+            '<img src="cats.jpg" alt="мы" class="cat-image"> ну мы? :3 ',  <!-- Используем одинарные кавычки -->
+            "меня радуют твои сообщения!",
+            "ты няшка!",
+            '<img src="cle.jpg" alt=":)" class="cat-image"> чую тут умняшу ', <!-- Используем одинарные кавычки -->
+            "ты такой же прикольный как мои комиксы ",
+            "мне с тобой комфортно это круто :3 ",
+            '<img src="cat.jpg" alt="кит" class="cat-image"> ты самый милый китик! ', <!-- Используем одинарные кавычки -->
+        ];
+
+        function showLove() {
+            const message = document.getElementById("message");
+
+            const randomIndex = Math.floor(Math.random() * messages.length);
+
+            message.innerHTML = messages[randomIndex];  // Используем innerHTML для вставки картинок
+        }
+    </script>
+</body>
+</html>
